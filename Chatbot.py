@@ -4,7 +4,7 @@ def simple_chatbot(user_input):
     elif "how are you" in user_input:
         return "Yeah..I'm feeling Great!"
     elif "motivation" in user_input:
-        return "“Turn your wounds into wisdom.” ―Oprah Winfrey.hello"
+        return "“Turn your wounds into wisdom.” ―Oprah Winfrey."
     elif "goodbye" in user_input:
         return "Goodbye! Have a great day!"
     else:
