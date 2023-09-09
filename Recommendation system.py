@@ -1,8 +1,6 @@
 import numpy as np
 
-# Sample user-item matrix (rows are users, columns are movies)
 # Each row corresponds to a user's ratings for different movies
-# In this example, we have 5 users and 5 movies
 user_movie_ratings = np.array([
     [5, 4, 0, 0, 1],
     [0, 5, 4, 0, 2],
@@ -11,7 +9,6 @@ user_movie_ratings = np.array([
     [0, 2, 0, 4, 5]
 ])
 
-# Function to calculate similarity between two users using Pearson correlation
 def calculate_similarity(user1, user2):
     common_ratings = np.logical_and(user1 != 0, user2 != 0)
     if np.sum(common_ratings) == 0:
@@ -24,7 +21,6 @@ def calculate_similarity(user1, user2):
     similarity = num / np.sqrt(denom1 * denom2)
     return similarity
 
-# Function to get top N movie recommendations for a user
 def get_top_movie_recommendations(user_id, user_movie_ratings, N):
     user_ratings = user_movie_ratings[user_id]
     similarities = [calculate_similarity(user_ratings, other_user) for other_user in user_movie_ratings]
